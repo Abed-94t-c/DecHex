@@ -25,7 +25,9 @@ class Dec2Hex {
         int rem, num;
         num = Arg1;
         String hexadecimal = "";
-        logger.info("Converting the Decimal Value " + num + " to Hex...");
+
+        // Log message using String.format
+        logger.info(String.format("Converting the Decimal Value %d to Hex...", num));
 
         while (num != 0) {
             rem = num % 16;
@@ -33,7 +35,8 @@ class Dec2Hex {
             num = num / 16;
         }
 
-        logger.info("Hexadecimal representation is: " + hexadecimal);
+        // Log the hexadecimal representation using String.format
+        logger.info(String.format("Hexadecimal representation is: %s", hexadecimal));
     }
 }
 
