@@ -1,10 +1,12 @@
 import java.util.logging.Logger;
 
 class Dec2Hex {
-    public static int Arg1;
+
+    // Make the field private and follow naming conventions
+    private static int arg1;
     private static final Logger logger = Logger.getLogger(Dec2Hex.class.getName());
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // Check if an argument is provided
         if (args.length == 0) {
             logger.severe("Error: No input argument provided. Please provide an integer.");
@@ -13,7 +15,7 @@ class Dec2Hex {
 
         try {
             // Try to parse the first argument as an integer
-            Arg1 = Integer.parseInt(args[0]);
+            arg1 = Integer.parseInt(args[0]);
         } catch (NumberFormatException e) {
             // Handle the case where the input is not an integer
             logger.severe("Error: Invalid input. Please provide a valid integer.");
@@ -21,10 +23,10 @@ class Dec2Hex {
         }
 
         // Continue with the conversion if the input is valid
-        char ch[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-        int rem, num;
-        num = Arg1;
-        String hexadecimal = "";
+        char[] ch = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+        int rem;
+        int num = arg1;
+        StringBuilder hexadecimal = new StringBuilder();
 
         // Log message using String.format if info level is enabled
         if (logger.isLoggable(java.util.logging.Level.INFO)) {
@@ -33,13 +35,13 @@ class Dec2Hex {
 
         while (num != 0) {
             rem = num % 16;
-            hexadecimal = ch[rem] + hexadecimal;
+            hexadecimal.insert(0, ch[rem]); // Use StringBuilder to prepend characters
             num = num / 16;
         }
 
         // Log the hexadecimal representation using String.format if info level is enabled
         if (logger.isLoggable(java.util.logging.Level.INFO)) {
-            logger.info(String.format("Hexadecimal representation is: %s", hexadecimal));
+            logger.info(String.format("Hexadecimal representation is: %s", hexadecimal.toString()));
         }
     }
 }
