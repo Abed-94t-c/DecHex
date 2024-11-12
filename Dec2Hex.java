@@ -40,7 +40,8 @@ class Dec2Hex {
         }
 
         // Log the hexadecimal representation using String.format if info level is enabled
-              
+                 if (logger.isLoggable(java.util.logging.Level.INFO)) {
+            logger.info(String.format("Hexadecimal Representation: %s", hexadecimal.toString())) 
 
         }
     }
