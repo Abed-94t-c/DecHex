@@ -1,4 +1,4 @@
-package dec2hex;
+package decimaltohex;
 
 import java.util.logging.Logger;
 import java.util.logging.Level;

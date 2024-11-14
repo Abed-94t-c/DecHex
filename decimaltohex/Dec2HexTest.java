@@ -1,4 +1,4 @@
-package dec2hex;
+package decimaltohex;
 
 import org.junit.Before;
 import org.junit.Test;
