@@ -1,9 +1,11 @@
+
+package dec2hex;
+
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class Dec2HexTest {
-
     @Before
     public void setUp() {
         // Any setup can be done here if needed
@@ -26,3 +28,4 @@ public class Dec2HexTest {
         assertEquals("Hexadecimal of a negative number should be empty", "", Dec2Hex.convertToHex(-10));
     }
 }
+
