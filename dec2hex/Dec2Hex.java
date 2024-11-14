@@ -1,7 +1,7 @@
 package dec2hex;
 
-
 import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class Dec2Hex {
 
@@ -24,7 +24,6 @@ public class Dec2Hex {
             hexadecimal.insert(0, ch[rem]);
             num = num / 16;
         }
-
         return hexadecimal.toString();
     }
 
@@ -36,7 +35,9 @@ public class Dec2Hex {
 
         try {
             int arg1 = Integer.parseInt(args[0]);
-            logger.info(String.format("Hexadecimal Representation: %s", convertToHex(arg1)));
+            if (logger.isLoggable(Level.INFO)) {
+                logger.info(String.format("Hexadecimal Representation: %s", convertToHex(arg1)));
+            }
         } catch (NumberFormatException e) {
             logger.severe("Error: Invalid input. Please provide a valid integer.");
         }
